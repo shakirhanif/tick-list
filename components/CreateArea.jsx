@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { MdAdd } from "react-icons/md";
 
 function CreateArea(props) {
   const refOne = useRef(null);
@@ -64,7 +65,14 @@ function CreateArea(props) {
           placeholder="Take a note..."
           rows={focus ? "3" : "1"}
         />
-        {focus ? <button onClick={submitNote}>+</button> : null}
+        {focus ? (
+          <button
+            onClick={submitNote}
+            className=" flex items-center justify-center"
+          >
+            <MdAdd size={25}></MdAdd>
+          </button>
+        ) : null}
       </form>
     </div>
   );

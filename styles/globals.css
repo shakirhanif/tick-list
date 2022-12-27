@@ -1,3 +1,6 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 * {
   padding: 0;
   margin: 0;
@@ -7,14 +10,11 @@ html {
   font-family: "Montserrat", sans-serif;
 }
 body {
-  background: #eee;
-  padding: 0 16px;
-  background-color: #eee;
-  background-image: url("https://www.transparenttextures.com/patterns/concrete-wall-2.png");
+  background-image: url("../public/table.jpg");
   /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 }
 
-header {
+/* header {
   background-color: #e63946;
   margin: auto -16px;
   padding: 16px 32px;
@@ -25,6 +25,10 @@ header h1 {
   color: #fff;
   font-family: "McLaren", cursive;
   font-weight: 200;
+} */
+
+.pageTitle {
+  font-family: "McLaren", cursive;
 }
 
 footer {
@@ -102,4 +106,45 @@ form.create-note button {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
   cursor: pointer;
   outline: none;
+}
+
+div.stickyNote {
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px black;
+  font-family: Arial;
+  margin: 4px;
+  transition: all 0.333s ease;
+}
+
+div.stickyNote div.stickyTitle {
+  display: block;
+  background: #ffc800;
+  width: 100%;
+  color: white;
+  padding: 5px 0px;
+  border-radius: 10px 10px 0px 0px;
+  text-align: center;
+  font-size: 20px;
+}
+
+div.stickyNote div.stickyContent {
+  font-size: 14px;
+  padding: 10px;
+  color: rgb(110, 110, 110);
+  text-overflow: clip;
+}
+
+div.stickyNote:hover {
+  box-shadow: 0px 0px 10px black;
+}
+
+div.stickyNote:hover div.stickyTitle {
+  background: rgb(255, 180, 0);
+}
+
+h1 {
+  font: 30px Arial;
 }

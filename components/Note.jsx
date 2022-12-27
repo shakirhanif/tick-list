@@ -1,4 +1,5 @@
 import React from "react";
+import { AiFillDelete } from "react-icons/ai";
 
 function Note(props) {
   function handleClick() {
@@ -6,10 +7,16 @@ function Note(props) {
   }
 
   return (
-    <div className="note">
-      <h1>{props.title}</h1>
-      <p>{props.content}</p>
-      <button onClick={handleClick}>delete</button>
+    <div className=" float-left m-4">
+      <div className="stickyNote bg-white relative">
+        <div className="stickyTitle">{props.title}</div>
+        <div className=" stickyContent">{props.content}</div>
+        <div className=" absolute right-0 -bottom-1">
+          <button>
+            <AiFillDelete onClick={handleClick} size={25}></AiFillDelete>
+          </button>
+        </div>
+      </div>
     </div>
   );
 }

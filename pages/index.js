@@ -24,27 +24,29 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Tick List</title>
+        <title>Sticky</title>
         <meta
-          name="Tick List"
-          content="This is todo app, keep track of your routine tasks"
+          name="Sticky"
+          content="This is stciky notes app, keep track of your routine tasks"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <div>
         <Header />
         <CreateArea onAdd={addNote} />
-        {notes.map((noteItem, index) => {
-          return (
-            <Note
-              key={index}
-              id={index}
-              title={noteItem.title}
-              content={noteItem.content}
-              onDelete={deleteNote}
-            />
-          );
-        })}
+        <div className=" px-20">
+          {notes.map((noteItem, index) => {
+            return (
+              <Note
+                key={index}
+                id={index}
+                title={noteItem.title}
+                content={noteItem.content}
+                onDelete={deleteNote}
+              />
+            );
+          })}
+        </div>
         <Footer />
       </div>
     </>
